@@ -1,0 +1,361 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: SFProText-Regular, Helvetica, sans-serif;
+    color: #000000;
+    border: 0px;
+    box-sizing: border-box;
+}
+body {
+color:black;
+background-color:white;
+background-image:url(https://i.pinimg.com/originals/ea/78/11/ea7811f16fa403dd0a6f157fc61494d5.jpg);
+margin:0;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.boite {
+    margin: 0 auto;
+    max-width: 600px;
+    max-heigh: 600px;
+    padding: 1rem;
+}
+
+h1 {
+    color : rgb(0,0,0);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 1px solid #e5e5ea;
+    color: #666;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.5rem;
+}
+
+form {
+    border-top: 1px solid #e5e5ea;
+    margin-top: 1.25rem;
+    padding-top: 1.5rem;
+    max-width: 600px;
+}
+
+form #site {
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    background-color: #FFFFFF;
+    padding: 10px;
+    max-width: 600px;
+    width: 100%;
+    height: 5vh;
+    font-size: 24px;
+    letter-spacing: 0.43px;
+}
+
+/* Taken from Matt Smith https://codepen.io/AllThingsSmitty/pen/jommGQ and adapted by Codigo*/
+.imessage {
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "SanFrancisco";
+    font-size: 1.25rem;
+    margin: auto auto;
+    max-width: 600px;
+    max-height: 600px;
+    padding: 1.5rem 1.5rem;
+    overflow: hidden;
+  }
+  .imessage p {
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    max-width: 75%;
+    height: 75%;
+    padding: 0.5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+  }
+
+  .imessage p::before,
+  .imessage p::after {
+    bottom: -0.1rem;
+    content: "";
+    height: 1rem;
+    position: absolute;
+  }
+  
+  p.from-me {
+    align-self: flex-end;
+    background-color: #248bf5;
+    color: #fff; 
+  }
+  
+  p.from-me::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    border-right: 1rem solid #248bf5;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  p.from-me::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform:translate(-30px, -2px);
+    width: 10px;
+  }
+  
+  p[class^="from-"] {
+    margin: 0.5rem 0;
+    width: fit-content;
+  }
+  
+  p.from-me ~ p.from-me {
+    margin: 0.25rem 0 0;
+  }
+  
+  p.from-me ~ p.from-me:not(:last-child) {
+    margin: 0.25rem 0 0;
+  }
+  
+  p.from-me ~ p.from-me:last-child {
+    margin-bottom: 0.5rem;
+  }
+  
+  p.from-them {
+    align-items: flex-start;
+    background-color: #e5e5ea;
+    color: #000;
+  }
+  
+  p.from-them:before {
+    border-bottom-right-radius: 0.8rem 0.7rem;
+    border-left: 1rem solid #e5e5ea;
+    left: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  p.from-them::after {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    left: 20px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+  }
+  @import url(//fonts.googleapis.com/icon?family=Material+Icons);
+
+$highlight: rgba(#FFFFFF, 0.3);
+$color: #714efc;
+
+body, html {
+  height: 100%;
+  margin: 0; padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-bar {
+  background: $color;
+  box-shadow: 0px 15px 24px rgba(0,0,0,0.3);
+  border-radius: 36px;
+  padding: 1em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transform-origin: calc(0.5em + 18px) 50%;
+  &__toggle {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background: $highlight;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+    .material-icons {
+      font-size: 24px;
+    }
+  }
+  &__message, &__buttons {
+    transform-origin: calc(-1em - 18px) 50%;
+    width: 190px;
+    transition: 0.2s ease-out;
+    position: relative;
+    padding-left: 1em;
+  }
+  &__input {
+    background: $highlight;
+    height: 36px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    width: 100%;
+    border: 0;
+    padding: 1em;
+    color: white;
+    &::placeholder {
+      color: rgba(#FFFFFF, 0.5);
+    }
+  }
+  &__buttons {
+    position: absolute;
+    display: flex;
+    left: calc(36px + 1em);
+    justify-content: space-between;
+    width: 190px;
+    transform: rotate(90deg);
+  }
+  &.--is-active {
+    .chat-bar__toggle {
+      transform: rotateZ(-135deg);
+    }
+    .chat-bar__message {
+      transform: rotate(-90deg);
+    }
+    .chat-bar__buttons {
+      transform: rotate(0);
+      .button {
+        animation-name: lift;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-duration: 0.25s;
+      }
+    }
+  }
+  &.--bop {
+    animation: bop 0.6s forwards;
+  }
+   &.--drop {
+    animation: drop 0.6s forwards;
+  }
+}
+
+  .button {
+    width: 36px; height: 36px;
+    background: $highlight;
+    border-radius: 18px;
+    transform: translateY(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+    }
+}
+
+@for $i from 1 through 4 {
+  .b-#{$i} {
+    animation-delay: #{$i * 0.075}s;
+  }
+}
+
+@keyframes bop {
+  0%, 100% {
+    transform: rotateZ(0);
+  }
+  66% {
+    transform: rotateZ(-10deg);
+  }
+}
+
+@keyframes drop {
+  0%, 100% {
+    transform: rotateZ(0);
+  }
+  66% {
+    transform: rotateZ(10deg);
+  }
+}
+
+@keyframes lift {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+// lazy dog – one class only
+.material-icons {
+  color: white;
+}
+
+.sidenote {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-family: arial;
+  color: $color;
+  font-size: 1em;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  i {
+    color: $color;
+    font-size: 1em;
+    line-height: 0;
+  }
+}
+ .chat-box-footer {
+    width: 100%;
+    padding: $standard-padding;
+    border-top: solid 1px #cfcfcf;
+    box-sizing: border-box;
+    display: flex;
+    > #chat_input {
+      color: $font-color;
+      font-family: Raleway, sans-serif;
+      font-size: $font-size;
+      background-color: #d2d2d2;
+      width: 100%;
+      height: 40px;
+      max-height: 120px;
+      border: none;
+      padding: 10px 15px;
+      resize: none;
+      box-sizing: border-box;
+      border-radius: $standard-radius;
+      transition: 0.3s background-color;
+      &:focus {
+        background-color: #efefef;
+      }
+    }
